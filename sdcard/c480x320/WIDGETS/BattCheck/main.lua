@@ -596,8 +596,9 @@ local function refresh(wgt, event, touchState)
   elseif wgt.zone.w > 65 and wgt.zone.h > 35 then
     refreshZoneTiny(wgt)
   end
+-- Export battery remaining capacity to Global variable that can be read with a special function (read value)
+   model.setGlobalVariable(8, 0, wgt.cellPercent)
   --cpuProfilerAdd(wgt, 'main-loop-4', t4);
-
   --cpuProfilerAdd(wgt, 'main-loop', t1);
   --cpuProfilerShow(wgt);
   --lcd.drawText(wgt.zone.x, wgt.zone.y, string.format("r:%d", wgt.telemResetCount), SMLSIZE + wgt.text_color)
